@@ -1,2 +1,30 @@
 # mysql-formula
-saltstack formula for mysql, mariadb, and other forks
+
+salt formula to configure mysql-server and mysql-client. You should be able to swap in mariadb and percona db with minimal effort though these have not been tested yet.
+
+## Requirements
+Install and setup brew:
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+```
+brew install cask
+brew cask install vagrant
+```
+
+```
+cd <formula dir>
+bundle install
+```
+or
+```
+sudo gem install test-kitchen
+sudo gem install kitchen-vagrant
+sudo gem install kitchen-salt
+```
+
+Run a converge on the default configuration:
+```
+kitchen converge default
+```

@@ -1,0 +1,9 @@
+{% for section, settings in config.iteritems() %}
+{%- if settings is mapping %}
+[{{section}}]
+{%- for k, v in settings.iteritems() %}
+{{k}}{% if v != "" %}={{v}}{% endif %}
+{%- endfor -%}
+{%- endif -%}
+{%- endfor %}
+!includedir {{config.includedir}}
